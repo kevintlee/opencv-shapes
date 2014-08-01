@@ -1,10 +1,20 @@
+###########################################
+## thresholdingImage.py
+## 
+## Converts an image file to binary, then writes pixel values to CSV
+##
+## Author: Kevin T. Lee
+###########################################
+
 import sys, os, cv2, csv
 import numpy as np
 from PIL import Image
 
+# Create array of shapes 
 shapes = ['square', 'circle', 'triangle']
 imagePixelList = []
 
+# Loop through array of shapes to get images from file and get iamge data
 for i,val in enumerate(shapes):
     for root, dirs, files in os.walk("C:/Users/ktl29155/Desktop/opencv-shapes/test images/" + shapes[i]):
         labelRow = ['label']

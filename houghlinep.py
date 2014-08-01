@@ -1,3 +1,12 @@
+###########################################
+## houghlinep.py
+## 
+## Find hough lines, OPENCV2 Code
+##
+## Author: Kevin T. Lee
+## Credits: OpenCV2
+###########################################
+
 import cv2
 import numpy as np
 

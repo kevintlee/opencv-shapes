@@ -1,13 +1,23 @@
+###########################################
+## thresholdingImage.py
+## 
+## Converts an image file to binary, then writes pixel values to CSV
+##
+## Author: Kevin T. Lee
+###########################################
+
 import sys, cv2, csv, os
 import numpy as np
 from PIL import Image
 
 
+# Set imageName variable
 imageName = 'square1.jpg'
 
+# Read iamgeName file
 sourceImage = cv2.imread(imageName, 0)
 
- ## color to gray scale
+## color to gray scale
 #grayImage = cv2.cvtColor(sourceImage, cv2.COLOR_RGB2GRAY) # cv2.COLOR_RGB2GRAY = 7
 #grayImgName = 'gray_' + imageName
  
@@ -19,7 +29,7 @@ binaryImgName = 'binary_' + imageName
 cv2.imwrite(binaryImgName, binaryImage)
 
 
-#Get pixels in image
+#Get pixels in image, store pixel values
 im = Image.open(binaryImgName)
 pixels = list(im.getdata())
 
@@ -27,7 +37,7 @@ pixels = list(im.getdata())
 #print(pixels)
 
 
-#Write CSV file with shape data
+#Write CSV file with shape data (pixel values)
 fl = open('shapedataIMAG19.csv', 'w')
 
 writer = csv.writer(fl, lineterminator='\n')

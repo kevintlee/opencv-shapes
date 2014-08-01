@@ -1,3 +1,7 @@
+###########################################
+## shapes test.py
+###########################################
+
 import numpy as np
 import cv2
 import csv
@@ -34,23 +38,23 @@ for cnt in contours:
      if len(approx)==5:
          print "pentagon"
          pixels.insert(0, "pentagon")
-         cv2.drawContours(img,[cnt],0,255,-1)
+         #cv2.drawContours(img,[cnt],0,255,-1)
      elif len(approx)==3:
          print "triangle"
          pixels.insert(0, "triangle")
-         cv2.drawContours(img,[cnt],0,(0,255,0),-1)
+         #cv2.drawContours(img,[cnt],0,(0,255,0),-1)
      elif len(approx)==4:
          print "square"
          pixels.insert(0, "square")
-         cv2.drawContours(img,[cnt],0,(0,0,255),-1)
+         #cv2.drawContours(img,[cnt],0,(0,0,255),-1)
      elif len(approx) == 9:
          print "half-circle"
          pixels.insert(0, "half-circle")
-         cv2.drawContours(img,[cnt],0,(255,255,0),-1)
+         #cv2.drawContours(img,[cnt],0,(255,255,0),-1)
      elif len(approx) > 15:
          print "circle"
          pixels.insert(0, "circle")
-         cv2.drawContours(img,[cnt],0,(0,255,255),-1)
+         #cv2.drawContours(img,[cnt],0,(0,255,255),-1)
 
 
 # Debug print statement - pixel array
